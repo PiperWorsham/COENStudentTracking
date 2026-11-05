@@ -8,6 +8,10 @@ permissions:
   pages: write
   id-token: write
 
+defaults:
+  run:
+    working-directory: button-logger
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,6 +28,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./button-logger/dist
       - uses: actions/deploy-pages@v4
         id: deployment
